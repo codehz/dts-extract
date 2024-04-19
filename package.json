@@ -1,0 +1,12 @@
+{
+  "name": "dts-extract",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "version": "0.0.1"
+}

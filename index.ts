@@ -31,7 +31,10 @@ export function extractDts(
   const compiler = createCompilerHost(result.options);
   compiler.writeFile = (filename, text, bom, onError, [src] = []) => {
     if (src && src.fileName in mapping) {
-      writeFileSync(mapping[src.fileName], text);
+      writeFileSync(
+        mapping[src.fileName],
+        `// Code generated from ${src.fileName}; DO NOT EDIT.\n\n${text}`
+      );
     }
   };
   const program = createProgram(Object.keys(mapping), result.options, compiler);
